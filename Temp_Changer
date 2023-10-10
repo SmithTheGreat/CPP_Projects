@@ -3,7 +3,7 @@
 using namespace std;
 
   int main() {
-  cout<<"Welcome to tempurature conversion"<<endl;
+  cout<<"Welcome to temperature conversion"<<endl;
   int i =0 ;
   double temp;
   while (i == 0) {
@@ -21,7 +21,7 @@ using namespace std;
   cin >> finalUnit;
   cout<<""<<endl;
   while (finalUnit>3 && finalUnit > 0) {
-    cout<<"That is not one of the options!\nPlease choose an option for your initial unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
+    cout<<"That is not one of the options!\nPlease choose an option for your final unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
     cin >> finalUnit;
     cout<<""<<endl;
   }
@@ -30,7 +30,7 @@ using namespace std;
   cin >> initial;
   cout<<""<<endl;
   while (initialUnit == 1 && initial < 0) {
-    cout<<"That is impossible\nPlease enter a valid initial tempurature: ";
+    cout<<"That is impossible\nPlease enter a valid initial temperature: ";
     cin >> initial;
     cout<<""<<endl;
   }
@@ -73,9 +73,10 @@ using namespace std;
         cout<<"Stop wasting my time"<<endl<<initial<<" Fahrenheit in Fahrenheit is "<<initial<<endl;
     }
   }
-  cout<<"Would you like to convert another tempurature?(0 for yes, 1 for no): ";
+  cout<<"Would you like to convert another temperature?(0 for yes, 1 for no): ";
   cin>>i;
   
   }
+  cout<<"I hope that you found this converter useful!"<<endl;
   return 0;
   }
