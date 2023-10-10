@@ -1,0 +1,81 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+  int main() {
+  cout<<"Welcome to tempurature conversion"<<endl;
+  int i =0 ;
+  double temp;
+  while (i == 0) {
+  cout<<"Pick your initial unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
+  int initialUnit ;
+  cin >> initialUnit;
+  cout<<""<<endl;
+  while (initialUnit>3 && initialUnit > 0) {
+    cout<<"That is not one of the options!\nPlease choose an option for your initial unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
+    cin >> initialUnit;
+    cout<<""<<endl;
+  }
+  cout<<"Pick your desired unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
+  int finalUnit ;
+  cin >> finalUnit;
+  cout<<""<<endl;
+  while (finalUnit>3 && finalUnit > 0) {
+    cout<<"That is not one of the options!\nPlease choose an option for your initial unit(1 for kelvin, 2 for celsius,3 for fahrenheit): ";
+    cin >> finalUnit;
+    cout<<""<<endl;
+  }
+  cout<<"Please enter your initial temperature: ";
+  double initial;
+  cin >> initial;
+  cout<<""<<endl;
+  while (initialUnit == 1 && initial < 0) {
+    cout<<"That is impossible\nPlease enter a valid initial tempurature: ";
+    cin >> initial;
+    cout<<""<<endl;
+  }
+  if (initialUnit == 1) {
+    if (finalUnit == 2) {
+      temp = initial-273.15;
+      cout <<initial<<" Kelvin in Celsius is "<<temp<<endl;
+    }
+    else if(finalUnit == 3) {
+      temp = ((initial-273.15)*9/5)+32;
+      cout <<initial<<" Kelvin in Fahrenheit is "<<temp<<endl;
+    }
+    else if(finalUnit==1){
+        cout<<"Stop wasting my time"<<endl<<initial<<" Kelvin in Kelvin is "<<initial<<endl;
+    }
+  }
+  else if(initialUnit == 2) {
+    if (finalUnit == 1) {
+      temp = initial+273.15;
+      cout <<initial<<" Celsius in Kelvin is "<<temp<<endl;
+    }
+    else if(finalUnit == 3) {
+      temp = ((initial)*9/5)+32;
+      cout <<initial<<" Celsius in Fahrenheit is "<<temp<<endl;
+    }
+    else if(finalUnit==2){
+        cout<<"Stop wasting my time"<<endl<<initial<<" Celsius in Celsius is "<<initial<<endl;
+    }
+  }
+  else if(initialUnit == 3) {
+    if (finalUnit == 1) {
+      temp = ((initial-32)*5/9)+273.15;
+      cout <<initial<<" Fahrenheit in Kelvin is "<<temp<<endl;
+    }
+    else if(finalUnit == 2) {
+      temp = (initial-32)*5/9;
+      cout <<initial<<" Fahrenheit in Celsius is "<<temp<<endl;
+    }
+    else if(finalUnit==3){
+        cout<<"Stop wasting my time"<<endl<<initial<<" Fahrenheit in Fahrenheit is "<<initial<<endl;
+    }
+  }
+  cout<<"Would you like to convert another tempurature?(0 for yes, 1 for no): ";
+  cin>>i;
+  
+  }
+  return 0;
+  }
